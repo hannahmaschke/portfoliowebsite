@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Hannah Maschke</title>
+    <!-- FIX: Corrected typo in integrity attribute -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* CSS remains the same */
+        .project-thumbnail {
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .project-thumbnail:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='images/modern2.png') }}" alt="Logo" style="height: 40px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About Me</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="{{ url_for('projects') }}">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                    <form action="{{ url_for('search') }}" method="POST" class="d-flex" role="search">
+                        <input class="form-control me-2 form-control-dark text-bg-dark" type="search" name="query"
+                            placeholder="Search..." aria-label="Search" required>
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Title -->
+        <section class="px-4 py-5 text-center text-bg-dark">
+            <div class="py-5">
+                <h1 class="display-5 fw-bold">Projects</h1>
+                <p class="lead">Here are some projects I have completed in the past.</p>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- Simallo Project Card -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="text-center py-4 bg-light">
+                                <img src="{{ url_for('static', filename='images/carousel6.png') }}"
+                                    class="card-img-top project-thumbnail" alt="Simallo Logo"
+                                    style="max-height: 120px; width: auto; object-fit: contain;" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Click to view the image larger">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Simallo.com</h5>
+                                <p class="card-text">
+                                    As the lead developer, I developed Simallo.com from concept to deployment.
+                                    <a id="read-more-simallo" class="text-decoration-none" data-bs-toggle="collapse"
+                                        href="#collapseSimallo" role="button" aria-expanded="false"
+                                        aria-controls="collapseSimallo">
+                                        Read more...
+                                    </a>
+                                </p>
+                                <div class="collapse" id="collapseSimallo">
+                                    <p class="card-text small">
+                                        I built a full-stack application featuring RESTful APIs, dynamic content, and a user authenticated log in system to create a seamless user experience. I built the database using Mongo DB, and an admin panel that allows non-technical staff to update every aspect of the site. I built the front end using Javascript, HTML and Tailwind CSS, and the backend using Python/Flask. I integrated Stripe and Triple A for our payment system, and for our user login system I integrated log in widgets for Facebook, Google, Mailgun, and Telegram.
+                                    </p>
+                                    <a class="text-decoration-none small" data-bs-toggle="collapse" href="#collapseSimallo"
+                                        role="button" aria-expanded="false" aria-controls="collapseSimallo">
+                                        Show less
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 text-center pb-3">
+                                <a href="https://www.simallo.com" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-primary">View Website</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Autism Symptom Tracker Project Card -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                           <div class="text-center py-4 bg-light">
+                                <img src="{{ url_for('static', filename='images/autismscreensot.png') }}"
+                                    class="card-img-top project-thumbnail" alt="Symptom Tracker Logo"
+                                    style="max-height: 120px; width: auto; object-fit: contain;" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Click to view the image larger">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Autism Symptom Tracker</h5>
+                                <p class="card-text">
+                                    I designed and built a desktop Windows form application to help users track autism-related symptoms, patterns, and daily mood/behavior changes.
+                                    <a id="read-more-autism" class="text-decoration-none" data-bs-toggle="collapse"
+                                        href="#collapseAutism" role="button" aria-expanded="false"
+                                        aria-controls="collapseAutism">
+                                        Read more...
+                                    </a>
+                                </p>
+                                <div class="collapse" id="collapseAutism">
+                                    <p class="card-text small">
+                                       The application included a daily questionnaire for users & caregivers, which is saved to a secure SQLite database enabling encrypted storage and CRUD operations. I built dynamic features with C# to analyze the data over time, creating custom advice and generating charts to visualize symptom severity. Additional features include a reference page with FAQs from peer-reviewed articles and an organized journal entry system. Throughout the project, I focused on accessibility, clean UI/UX, and real-world usability for neurodivergent individuals and caregivers, writing clear, maintainable code for future enhancements.
+                                    </p>
+                                    <a class="text-decoration-none small" data-bs-toggle="collapse" href="#collapseAutism"
+                                        role="button" aria-expanded="false" aria-controls="collapseAutism">
+                                        Show less
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 text-center pb-3">
+                                <a href="https://github.com/hannahmaschke/Autism-Symptom-Tracker" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Calorie Tracker Project Card -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                           <div class="text-center py-4 bg-light">
+                                <img src="{{ url_for('static', filename='images/calorietracker1.png') }}"
+                                    class="card-img-top project-thumbnail" alt="Calorie Tracker Logo"
+                                    style="max-height: 120px; width: auto; object-fit: contain;" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Click to view the image larger">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Express.js Calorie Tracker</h5>
+                                <p class="card-text">
+                                    I developed a full-stack web application with Express.js and Node.js that allows users to track their daily food intake and total calories consumed.
+                                    <a id="read-more-calorie" class="text-decoration-none" data-bs-toggle="collapse"
+                                        href="#collapseCalorie" role="button" aria-expanded="false"
+                                        aria-controls="collapseCalorie">
+                                        Read more...
+                                    </a>
+                                </p>
+                                <div class="collapse" id="collapseCalorie">
+                                    <p class="card-text small">
+                                       The app features a dynamic tallying system that displays the total calories consumed in real-time as users add food items. Users can set a daily calorie goal to visually compare their consumption and track their progress. To ensure data persistence, the application is connected to a MongoDB database, which keeps a historical record of previous days' calorie counts and tracks how consistently the user has adhered to their goals over time.
+                                    </p>
+                                    <a class="text-decoration-none small" data-bs-toggle="collapse" href="#collapseCalorie"
+                                        role="button" aria-expanded="false" aria-controls="collapseCalorie">
+                                        Show less
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 text-center pb-3">
+                                <a href="https://github.com/hannahmaschke/calorieCount" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Telegram Mini app Project Card -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                           <div class="text-center py-4 bg-light">
+                                <img src="{{ url_for('static', filename='images/miniapp.png') }}"
+                                    class="card-img-top project-thumbnail" alt="Photo of the mini app on Telegram"
+                                    style="max-height: 120px; width: auto; object-fit: contain;" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Click to view the image larger">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Telegram Mini App for Simallo</h5>
+                                <p class="card-text">
+                                    To enhance mobile accessibility for Simallo, I developed a Telegram Mini App that brings core platform features directly into the Telegram messenger.
+                                    <a id="read-more-telegram" class="text-decoration-none" data-bs-toggle="collapse"
+                                        href="#collapseTelegram" role="button" aria-expanded="false"
+                                        aria-controls="collapseTelegram">
+                                        Read more...
+                                    </a>
+                                </p>
+                                <div class="collapse" id="collapseTelegram">
+                                    <p class="card-text small">
+                                       This Mini App allows Telegram users to perform key actions like browsing Simallo plans, purchasing eSIMs, keeping track of eSIMs, activating the eSIM, checking compatibility with the user's mobile phone, and reviewing the FAQ section without leaving the Telegram environment. I engineered the backend integration using the Telegram Bot API and webhooks to securely synchronize data between the Mini App and Simallo's main database. The front-end was built using web technologies optimized for Telegram's in-app browser, ensuring a fast, responsive, and native-feeling user experience on mobile devices.
+                                    </p>
+                                    <a class="text-decoration-none small" data-bs-toggle="collapse" href="#collapseTelegram"
+                                        role="button" aria-expanded="false" aria-controls="collapseTelegram">
+                                        Show less
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 text-center pb-3">
+                                <a href="https://t.me/SimalloBot" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on Telegram</a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Boat Association site Project Card -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                           <div class="text-center py-4 bg-light">
+                                <video autoplay loop muted playsinline class="card-img-top"
+                                    alt="GIF of the homepage of the website"
+                                    style="width: 100%; max-height: 250px; object-fit: contain;">
+                                    <source src="{{ url_for('static', filename='images/gif.webm') }}" type="video/webm">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Website for Vintage Boat Association</h5>
+                                <p class="card-text">
+                                    I developed a functional website for the Vintage Boat Association.
+                                    <a id="read-more-boat" class="text-decoration-none" data-bs-toggle="collapse"
+                                        href="#collapseBoat" role="button" aria-expanded="false"
+                                        aria-controls="collapseBoat">
+                                        Read more...
+                                    </a>
+                                </p>
+                                <div class="collapse" id="collapseBoat">
+                                    <p class="card-text small">
+                                       The site displays upcoming events, previous events, the association's newsletter, and a form that allows users to submit content to be added to the next month's newsletter. I also built a fully encrypted admin panel and login for non technical employees and volunteers to edit the website, check newsletter submissions, and upload the newsletters.
+                                    </p>
+                                    <a class="text-decoration-none small" data-bs-toggle="collapse" href="#collapseBoat"
+                                        role="button" aria-expanded="false" aria-controls="collapseBoat">
+                                        Show less
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 text-center pb-3">
+                                <a href="https://github.com/hannahmaschke/boatdatabase" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Project Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" id="modalImage" class="img-fluid" alt="Project Image Preview">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 bg-dark text-white text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Hannah Maschke. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- FIX: Corrected typo in integrity attribute -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Reusable function for all "Read more..."/"Show less" toggles
+            const createToggle = (collapseId, readMoreId) => {
+                const collapseEl = document.getElementById(collapseId);
+                const readMoreEl = document.getElementById(readMoreId);
+                if (collapseEl && readMoreEl) {
+                    collapseEl.addEventListener('show.bs.collapse', () => {
+                        readMoreEl.classList.add('d-none');
+                    });
+                    collapseEl.addEventListener('hide.bs.collapse', () => {
+                        readMoreEl.classList.remove('d-none');
+                    });
+                }
+            };
+            // Initialize all toggles
+            createToggle('collapseSimallo', 'read-more-simallo');
+            createToggle('collapseAutism', 'read-more-autism');
+            createToggle('collapseCalorie', 'read-more-calorie');
+            createToggle('collapseTelegram', 'read-more-telegram');
+            createToggle('collapseBoat', 'read-more-boat');
+
+            // Logic for Image Modal
+            const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+            const modalImage = document.getElementById('modalImage');
+            document.querySelectorAll('.project-thumbnail').forEach(thumbnail => {
+                thumbnail.addEventListener('click', function () {
+                    modalImage.src = this.src;
+                    imageModal.show();
+                });
+            });
+
+            // Logic for Tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+</body>
+
+</html>
+

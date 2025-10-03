@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage - Hannah Maschke</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    /* Makes project images look clickable and adds a nice hover effect */
+    .project-thumbnail {
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .project-thumbnail:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+          <img src="{{ url_for('static', filename='images/modern2.png') }}" alt="Logo" style="height: 90px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('about') }}">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('projects') }}">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+            </li>
+          </ul>
+          <!-- <div class="d-flex flex-column flex-lg-row align-items-center">
+            <form class="me-lg-3 mb-3 mb-lg-0" role="search">
+              <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+                aria-label="Search">
+            </form>
+            <button type="button" class="btn btn-outline-light me-2">Search</button>
+          </div> -->
+          <form action="{{ url_for('search') }}" method="POST" class="d-flex" role="search">
+            <input class="form-control me-2 form-control-dark text-bg-dark" type="search" name="query"
+              placeholder="Search..." aria-label="Search" required>
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <div class="px-4 py-5 text-center text-bg-dark animated-gradient">
+    <h1 id="typed-text" class="display-5 fw-bold">Hannah Maschke</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">
+        Full Stack Developer
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <section class="px-4 py-5 text-center text-bg-dark">
+      <div class="py-5">
+        <h1 class="display-5 fw-bold">Building reliable, high-performance web solutions.</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">
+            Hi, I'm Hannah Maschke. I create modern and responsive websites, and design and build software- including
+            mobile apps and desktop applications.
+          </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="{{ url_for('projects') }}" type="button" class="btn btn-primary btn-lg px-4 gap-3">View My Work</a>
+            <a href="{{ url_for('about') }}" type="button" class="btn btn-outline-secondary btn-lg px-4">About Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='images/simallome.png') }}"
+              class="img-fluid rounded-circle mb-4 mb-md-0" alt="Hannah Maschke">
+          </div>
+          <div class="col-md-8">
+            <h2> Full Stack Developer</h2>
+            <p class="lead">I focus on clean code and user-friendly design, I build optimized web applications that are
+              not only functional but also fit all user needs.</p>
+            <a href="/about" class="btn btn-outline-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2>Featured Projects</h2>
+          <p class="lead">Here's a selection of my recent work.</p>
+        </div>
+        <div class="row justify-content-center">
+          <!-- Simallo Project Card -->
+          <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="text-center py-4 bg-light">
+                <img src="{{ url_for('static', filename='images/carousel6.png') }}" class="card-img-top project-thumbnail"
+                  alt="Simallo Logo" style="max-height: 120px; width: auto; object-fit: contain;"
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="Click to view the image larger">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Simallo.com</h5>
+                <p class="card-text">
+                  As the lead developer, I developed Simallo.com from concept to deployment.
+                  <a id="read-more-simallo" class="text-decoration-none" data-bs-toggle="collapse"
+                    href="#collapseSimallo" role="button" aria-expanded="false" aria-controls="collapseSimallo">
+                    Read more...
+                  </a>
+                </p>
+                <div class="collapse" id="collapseSimallo">
+                  <p class="card-text small">
+                    I built a full-stack application featuring RESTful APIs, dynamic content, and a user authenticated
+                    log in system to create a seamless user experience. I built the database using Mongo DB, and an
+                    admin panel that allows non-technical staff to update every aspect of the site. I built the front
+                    end using Javascript, HTML and Tailwind CSS, and the backend using Python/Flask. I integrated Stripe
+                    and Triple A for our payment system, and for our user login system I integrated log in widgets for
+                    Facebook, Google, Mailgun, and Telegram.
+                  </p>
+                  <a class="text-decoration-none small" data-bs-toggle="collapse" href="#collapseSimallo" role="button"
+                    aria-expanded="false" aria-controls="collapseSimallo">
+                    Show less
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0 text-center pb-3">
+                <a href="https://www.simallo.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View
+                  Website</a>
+              </div>
+            </div>
+          </div>
+          <!-- Autism Symptom Tracker Project Card -->
+          <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="text-center py-4 bg-light">
+                <!-- project icon -->
+                <img src="{{ url_for('static', filename='images/autismscreensot.png') }}"
+                  class="card-img-top project-thumbnail" alt="Symptom Tracker Logo"
+                  style="max-height: 120px; width: auto; object-fit: contain;" data-bs-toggle="tooltip"
+                  data-bs-placement="top" title="Click to view the image larger">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Autism Symptom Tracker</h5>
+                <p class="card-text">
+                  I designed and built a desktop Windows form application to help users track autism-related symptoms,
+                  patterns, and daily mood/behavior changes.
+                  <a id="read-more-autism" class="text-decoration-none" data-bs-toggle="collapse" href="#collapseAutism"
+                    role="button" aria-expanded="false" aria-controls="collapseAutism">
+                    Read more...
+                  </a>
+                </p>
+                <div class="collapse" id="collapseAutism">
+                  <p class="card-text small">
+                    The application included a daily questionnaire for users & caregivers, which is saved to a secure
+                    SQLite database enabling encrypted storage and CRUD operations. I built dynamic features with C# to
+                    analyze the data over time, creating custom advice and generating charts to visualize symptom
+                    severity. Additional features include a reference page with FAQs from peer-reviewed articles and an
+                    organized journal entry system. Throughout the project, I focused on accessibility, clean UI/UX, and
+                    real-world usability for neurodivergent individuals and caregivers, writing clear, maintainable code
+                    for future enhancements.
+                  </p>
+                  <a class="text-decoration-none small" data-bs-toggle="collapse" href="#collapseAutism" role="button"
+                    aria-expanded="false" aria-controls="collapseAutism">
+                    Show less
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0 text-center pb-3">
+                <a href="https://github.com/hannahmaschke/Autism-Symptom-Tracker" target="_blank"
+                  rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calorie Tracker Project Card -->
+          <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="text-center py-4 bg-light">
+                <!-- icon -->
+                <img src="{{ url_for('static', filename='images/calorietracker1.png') }}"
+                  class="card-img-top project-thumbnail" alt="Calorie Tracker Logo"
+                  style="max-height: 120px; width: auto; object-fit: contain;" data-bs-toggle="tooltip"
+                  data-bs-placement="top" title="Click to view the image larger">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Express.js Calorie Tracker</h5>
+                <p class="card-text">
+                  I developed a full-stack web application with Express.js and Node.js that allows users to track their
+                  daily food intake and total calories consumed.
+                  <a id="read-more-calorie" class="text-decoration-none" data-bs-toggle="collapse"
+                    href="#collapseCalorie" role="button" aria-expanded="false" aria-controls="collapseCalorie">
+                    Read more...
+                  </a>
+                </p>
+                <div class="collapse" id="collapseCalorie">
+                  <p class="card-text small">
+                    The app features a dynamic tallying system that displays the total calories consumed in real-time as
+                    users add food items. Users can set a daily calorie goal to visually compare their consumption and
+                    track their progress. To ensure data persistence, the application is connected to a MongoDB
+                    database, which keeps a historical record of previous days' calorie counts and tracks how
+                    consistently the user has adhered to their goals over time.
+                  </p>
+                  <a class="text-decoration-none small" data-bs-toggle="collapse" href="#collapseCalorie" role="button"
+                    aria-expanded="false" aria-controls="collapseCalorie">
+                    Show less
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0 text-center pb-3">
+                <a href="https://github.com/hannahmaschke/calorieCount" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-primary">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="/projects" class="btn btn-lg btn-outline-primary">See All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAROUSEL -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2>Services I Offer</h2>
+          <p class="lead">I can help you with the following.</p>
+        </div>
+
+        <div id="servicesCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <!-- Slide 1: Web Development -->
+            <div class="carousel-item active">
+              <div class="d-flex flex-column align-items-center text-center p-4">
+                <i class="bi bi-code-slash fs-1 text-primary"></i>
+                <img src="{{ url_for('static', filename='images/carousel2.jpg') }}" class="card-img-top"
+                  alt="Stock image of a software developer working"
+                  style="max-height: 600px; width: 600px; object-fit: contain;">
+                <h4 class="mt-3">Web Development</h4>
+                <p>Creating robust, scalable, and secure websites from the ground up.</p>
+              </div>
+            </div>
+            <!-- Slide 2: UI/UX Design -->
+            <div class="carousel-item">
+              <div class="d-flex flex-column align-items-center text-center p-4">
+                <i class="bi bi-palette fs-1 text-primary"></i>
+                <img src="{{ url_for('static', filename='images/carousel1.jpg') }}" class="card-img-top"
+                  alt="Stock image of code" style="max-height: 600px; width: 600px; object-fit: contain;">
+                <h4 class="mt-3">UI/UX Design</h4>
+                <p>Designing intuitive and beautiful user interfaces for a seamless user experience.</p>
+              </div>
+            </div>
+            <!-- Slide 3: Responsive Design -->
+            <div class="carousel-item">
+              <div class="d-flex flex-column align-items-center text-center p-4">
+                <i class="bi bi-phone fs-1 text-primary"></i>
+                <img src="{{ url_for('static', filename='images/carousel3.jpg') }}" class="card-img-top"
+                  alt="Stock image of a computer screen with a React project open"
+                  style="max-height: 600px; width: 600px; object-fit: contain;">
+                <h4 class="mt-3">Responsive Design</h4>
+                <p>Ensuring your website looks and works perfectly on all devices, from phones to desktops.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+
+      </div>
+    </section>
+
+    <section class="py-5 text-center text-bg-primary">
+      <div class="container">
+        <h2 class="display-6 fw-bold">Ready to build something amazing?</h2>
+        <p class="lead my-4">Let's connect and discuss how I can help you achieve your goals.</p>
+        <a href="/contact" class="btn btn-lg btn-light">Get In Touch</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- modal window/popup window structure -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageModalLabel">Project Preview</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <!--large image will be loaded here  -->
+          <img src="" id="modalImage" class="img-fluid" alt="Project Image Preview">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-4 bg-dark text-white text-center">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Hannah Maschke. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('#typed-text', {
+      strings: ["Hannah Maschke", "Software Developer", "Web Design"],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: true
+    });
+  </script>
+  <script>
+    // Logic for Simallo "Read more..."/"Show less" toggle
+    const collapseSimallo = document.getElementById('collapseSimallo');
+    const readMoreSimallo = document.getElementById('read-more-simallo');
+
+    collapseSimallo.addEventListener('show.bs.collapse', event => {
+      readMoreSimallo.classList.add('d-none');
+    });
+
+    collapseSimallo.addEventListener('hide.bs.collapse', event => {
+      readMoreSimallo.classList.remove('d-none');
+    });
+
+    // Logic for Autism App "Read more..."/"Show less" toggle
+    const collapseAutism = document.getElementById('collapseAutism');
+    const readMoreAutism = document.getElementById('read-more-autism');
+
+    collapseAutism.addEventListener('show.bs.collapse', event => {
+      readMoreAutism.classList.add('d-none');
+    });
+
+    collapseAutism.addEventListener('hide.bs.collapse', event => {
+      readMoreAutism.classList.remove('d-none');
+    });
+
+
+    // Logic for Calorie App "Read more..."/"Show less" toggle
+    const collapseCalorie = document.getElementById('collapseCalorie');
+    const readMoreCalorie = document.getElementById('read-more-calorie');
+
+    collapseCalorie.addEventListener('show.bs.collapse', event => {
+      readMoreCalorie.classList.add('d-none');
+    });
+
+    collapseCalorie.addEventListener('hide.bs.collapse', event => {
+      readMoreCalorie.classList.remove('d-none');
+    });
+
+    // modal window for project icons
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the modal elements
+      const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+      const modalImage = document.getElementById('modalImage');
+
+      // Get all the project images that should trigger the modal
+      const projectThumbnails = document.querySelectorAll('.project-thumbnail');
+
+      // Add a click event listener to each project image
+      projectThumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function () {
+          // Get the 'src' of the clicked image
+          const imageSource = this.src;
+          // Set the 'src' of the image inside the modal
+          modalImage.src = imageSource;
+          // Show the modal
+          imageModal.show();
+        });
+      });
+    });
+
+    // This finds all elements with the 'data-bs-toggle="tooltip"' attribute and enables them
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+  </script>
+</body>
+
+</html>
