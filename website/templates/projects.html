@@ -541,11 +541,15 @@
                             </div>
 
                             <div class="card-footer bg-transparent border-0 text-center pb-3">
-                                <a href="httpsEsim.vu" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn-primary">View Website</a>
+                                <button type="button" class="btn btn-primary view-gallery-btn">
+                                    View Gallery
+                                </button>
                             </div>
+
                         </div>
                     </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -564,34 +568,36 @@
         </div>
     </div> -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="imageModalLabel">Project Preview</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div id="modalCarousel" class="carousel slide" data-bs-ride="carousel">
-                    
-                    <div class="carousel-indicators" id="modal-carousel-indicators">
-                    </div>
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Project Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalCarousel" class="carousel slide" data-bs-ride="carousel">
 
-                    <div class="carousel-inner" id="modal-carousel-inner">
-                    </div>
+                        <div class="carousel-indicators" id="modal-carousel-indicators">
+                        </div>
 
-                    <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                        <div class="carousel-inner" id="modal-carousel-inner">
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
     <footer class="py-4 bg-dark text-white text-center">
@@ -600,51 +606,47 @@
         </div>
     </footer>
 
-   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
 
-        // TOGGLE LOGIC 
-        const createToggle = (collapseId, readMoreId) => {
-            const collapseEl = document.getElementById(collapseId);
-            const readMoreEl = document.getElementById(readMoreId);
-            if (collapseEl && readMoreEl) {
-                collapseEl.addEventListener('show.bs.collapse', () => {
-                    readMoreEl.classList.add('d-none');
-                });
-                collapseEl.addEventListener('hide.bs.collapse', () => {
-                    readMoreEl.classList.remove('d-none');
-                });
-            }
-        };
-        // Initialize all toggles
-        createToggle('collapseSimallo', 'read-more-simallo');
-        createToggle('collapseEsimvu', 'read-more-esimvu');
-        createToggle('collapseAutism', 'read-more-autism');
-        createToggle('collapseCalorie', 'read-more-calorie');
-        createToggle('collapseTelegram', 'read-more-telegram');
-        createToggle('collapseBoat', 'read-more-boat');
-        createToggle('collapseAffiliate', 'read-more-affiliate'); 
+            // TOGGLE LOGIC 
+            const createToggle = (collapseId, readMoreId) => {
+                const collapseEl = document.getElementById(collapseId);
+                const readMoreEl = document.getElementById(readMoreId);
+                if (collapseEl && readMoreEl) {
+                    collapseEl.addEventListener('show.bs.collapse', () => {
+                        readMoreEl.classList.add('d-none');
+                    });
+                    collapseEl.addEventListener('hide.bs.collapse', () => {
+                        readMoreEl.classList.remove('d-none');
+                    });
+                }
+            };
+            // Initialize all toggles
+            createToggle('collapseSimallo', 'read-more-simallo');
+            createToggle('collapseEsimvu', 'read-more-esimvu');
+            createToggle('collapseAutism', 'read-more-autism');
+            createToggle('collapseCalorie', 'read-more-calorie');
+            createToggle('collapseTelegram', 'read-more-telegram');
+            createToggle('collapseBoat', 'read-more-boat');
+            createToggle('collapseAffiliate', 'read-more-affiliate');
 
 
-        // TOOLTIP LOGIC 
-        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
+            // TOOLTIP LOGIC 
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl); 
+            });
 
-        // MODAL CAROUSEL LOGIC 
-        const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
-        const modalCarouselInner = document.getElementById('modal-carousel-inner');
-        const modalCarouselIndicators = document.getElementById('modal-carousel-indicators');
+            //  MODAL CAROUSEL 
+            const imageModal = new bootstrap.Modal(document.getElementById('imageModal')); 
+            const modalCarouselInner = document.getElementById('modal-carousel-inner');
+            const modalCarouselIndicators = document.getElementById('modal-carousel-indicators');
 
-        document.querySelectorAll('.project-thumbnail').forEach(thumbnail => {
-            thumbnail.addEventListener('click', function (event) {
-                
-                // Find the parent card of the clicked image
-                const card = event.target.closest('.card');
-                // Find all project images WITHIN that same card
-                const allThumbnails = card.querySelectorAll('.project-thumbnail');
-                const clickedImageSrc = event.target.src;
+            
+            // find all images in a card and build the modal carousel
+            const openModalForCard = (cardElement, clickedImageSrc = null) => {
+                const allThumbnails = cardElement.querySelectorAll('.project-thumbnail');
 
                 // Clear out old images from the modal
                 modalCarouselInner.innerHTML = '';
@@ -653,23 +655,30 @@
                 // Loop through all images found in the card and build the modal
                 allThumbnails.forEach((thumb, index) => {
                     const imgSrc = thumb.src;
-                    const isActive = (imgSrc === clickedImageSrc) ? 'active' : '';
+
+                    // Set active slide
+                    let isActive = '';
+                    if (clickedImageSrc) {
+                        isActive = (imgSrc === clickedImageSrc) ? 'active' : '';
+                    } else {
+                        isActive = (index === 0) ? 'active' : '';
+                    }
 
                     // Create indicator button
                     const indicator = `
-                        <button type_button" data-bs-target="#modalCarousel" 
-                                data-bs-slide-to="${index}" 
-                                class="${isActive}" 
-                                ${isActive ? 'aria-current="true"' : ''} 
-                                aria-label="Slide ${index + 1}"></button>
-                    `;
-                    
+                    <button type="button" data-bs-target="#modalCarousel" 
+                            data-bs-slide-to="${index}" 
+                            class="${isActive}" 
+                            ${isActive ? 'aria-current="true"' : ''} 
+                            aria-label="Slide ${index + 1}"></button>
+                `;
+
                     // Create carousel item
                     const item = `
-                        <div class_carousel-item ${isActive}">
-                            <img src="${imgSrc}" class="d-block w-100" alt="Project preview ${index + 1}">
-                        </div>
-                    `;
+                    <div class="carousel-item ${isActive}">
+                        <img src="${imgSrc}" class="d-block w-100" alt="Project preview ${index + 1}">
+                    </div>
+                `;
 
                     // Add them to the modal
                     modalCarouselIndicators.innerHTML += indicator;
@@ -678,10 +687,31 @@
 
                 // Show the modal
                 imageModal.show();
+            };
+
+            // Add listener for all image thumbnails
+            document.querySelectorAll('.project-thumbnail').forEach(thumbnail => {
+                thumbnail.addEventListener('click', function (event) {
+                    const card = event.target.closest('.card');
+                    const clickedImageSrc = event.target.src;
+                    openModalForCard(card, clickedImageSrc);
+                });
             });
+
+            // Add listener for the new "View Gallery" buttons
+            document.querySelectorAll('.view-gallery-btn').forEach(button => {
+                button.addEventListener('click', function (event) {
+                    const card = event.target.closest('.card');
+                    openModalForCard(card, null); // Pass 'null' so it defaults to the first image
+                });
+            });
+
         });
-    });
-</script>
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
