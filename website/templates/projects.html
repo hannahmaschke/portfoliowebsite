@@ -144,6 +144,45 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- eSIMVu Project Card -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="text-center py-4 bg-light">
+                                <img src="{{ url_for('static', filename='images/EsimvuIcon.webp') }}"
+                                    class="card-img-top project-thumbnail" alt="eSIMVu Logo"
+                                    style="max-height: 120px; width: auto; object-fit: contain;"
+                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Click to view the image larger">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Esim.vu</h5>
+                                <p class="card-text">
+                                    I am currently developing Esim.vu, the client is very happy with my progress
+                                    <a id="read-more-esimvu" class="text-decoration-none" data-bs-toggle="collapse"
+                                        href="#collapseEsimvu" role="button" aria-expanded="false"
+                                        aria-controls="collapseEsimvu">
+                                        Read more...
+                                    </a>
+                                </p>
+                                <div class="collapse" id="collapseEsimVu">
+                                    <p class="card-text small">
+                                       I engineered and maintained the company's core platform, handling both front-end and back-end development. I built a responsive and intuitive user interface using Javascript, HTML, and CSS. Concurrently, I developed and managed the server-side logic, database, and API using Python and Flask. A key focus was enhancing application integrity; I significantly improved security by implementing input sanitization, rate limiting, encryption, and added HTTP security headers. I also boosted performance by adding caching, loading the API data from the database (I fetch the fresh data every 24 hours via a cron job on the web server) leading to faster load times. 
+                                    </p>
+                                    <a class="text-decoration-none small" data-bs-toggle="collapse"
+                                        href="#collapseEsimvu" role="button" aria-expanded="false"
+                                        aria-controls="collapseEsimvu">
+                                        Show less
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 text-center pb-3">
+                                <a href="https://www.esim.vu" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-primary">View Website</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Autism Symptom Tracker Project Card -->
                     <div class="col-lg-4 mb-4">
                         <div class="card h-100">
