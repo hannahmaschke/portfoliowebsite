@@ -358,6 +358,89 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Affiliate System Project Card
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="text-center py-4 bg-light">
+                                <img src="{{ url_for('static', filename='images/miniapp.png') }}"
+                                    class="card-img-top project-thumbnail" alt="Photo of the mini app on Telegram"
+                                    style="max-height: 120px; width: auto; object-fit: contain;"
+                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Click to view the image larger">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Affiliate System for eSIM.vu</h5>
+                                <p class="card-text">
+                                    I developed an system for eSIMVu's affiliate/partner program. 
+                                    <a id="read-more-affiliate" class="text-decoration-none" data-bs-toggle="collapse"
+                                        href="#collapseAffiliate" role="button" aria-expanded="false"
+                                        aria-controls="collapseAffiliate">
+                                        Read more...
+                                    </a>
+                                </p>
+                                <div class="collapse" id="collapseAffiliate">
+                                    <p class="card-text small">
+                                        The affiliate system allows partners to track their commission and stats, create new 
+                                        promo codes, and create new referral links. I added onto the existing eSIMVu admin panel (I built this as well)
+                                        to allow the admin to review partner applications, and either accept or reject them. The applicant
+                                        will automatically be sent an email informing them of their application status. The admin
+                                        can also track the partner's commission, their stats, pay the partners, and configure their commission
+                                        rate. 
+                                
+                                    </p>
+                                    <a class="text-decoration-none small" data-bs-toggle="collapse"
+                                        href="#collapseAffiliate" role="button" aria-expanded="false"
+                                        aria-controls="collapseAffiliate">
+                                        Show less
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 text-center pb-3">
+                                <a href="https://t.me/SimalloBot" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-primary">View on Telegram</a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-lg-4 mb-4">
+    <div class="card h-100">
+
+        <div class="py-4 bg-light">
+            <div id="carouselAffiliate" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselAffiliate" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselAffiliate" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselAffiliate" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="text-center">
+                            <img src="{{ url_for('static', filename='images/affiliate-image-1.png') }}"
+                                class="project-thumbnail" alt="Affiliate system screenshot 1"
+                                style="max-height: 120px; width: auto; object-fit: contain;">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <img src="{{ url_for('static', filename='images/affiliate-image-2.png') }}"
+                                class="project-thumbnail" alt="Affiliate system screenshot 2"
+                                style="max-height: 120px; width: auto; object-fit: contain;">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <img src="{{ url_for('static', filename='images/affiliate-image-3.png') }}"
+                                class="project-thumbnail" alt="Affiliate system screenshot 3"
+                                style="max-height: 120px; width: auto; object-fit: contain;">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAffiliate" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
                 </div>
             </div>
         </section>
@@ -410,6 +493,8 @@
             createToggle('collapseCalorie', 'read-more-calorie');
             createToggle('collapseTelegram', 'read-more-telegram');
             createToggle('collapseBoat', 'read-more-boat');
+            createToggle('collapseEsimvu', 'read-more-esimvu');
+            createToggle('collapseAffiliate', 'read-more-affiliate');
 
             // Logic for Image Modal
             const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
