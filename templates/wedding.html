@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hannah & Fred's Wedding</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for elegant typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased">
+
+    <header class="relative min-h-screen flex flex-col items-center justify-center text-center bg-stone-200 px-4">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070')] bg-cover bg-center opacity-40"></div>
+        
+        <div class="relative z-10 max-w-2xl mx-auto">
+            <span class="text-xs tracking-[0.25em] uppercase text-stone-600 block mb-4">Are Getting Married</span>
+            <h1 class="text-5xl md:text-7xl font-serif font-light text-stone-900 mb-6">
+                Hannah <span class="block md:inline font-normal text-3xl md:text-5xl my-2 md:my-0 text-stone-500">&</span> Fred
+            </h1>
+            <p class="text-lg md:text-xl font-serif italic text-stone-700 tracking-wide mb-8">
+                October 2nd, 2026 &bull; Oshawa, Ontario
+            </p>
+            <a href="#rsvp" class="inline-block bg-stone-800 text-stone-100 hover:bg-stone-700 transition duration-300 px-8 py-3 tracking-wider text-sm uppercase">
+                RSVP Now
+            </a>
+        </div>
+    </header>
+
+    <!-- Our Story Section -->
+    <section id="story" class="py-24 px-6 max-w-3xl mx-auto text-center border-b border-stone-200">
+        <h2 class="text-3xl font-serif text-stone-900 mb-6">Our Story</h2>
+        <p class="text-stone-600 leading-relaxed mb-6">
+            We got engaged in May of 2025 and started planning the wedding shortly after. Ares is very excited that his parents are getting married! We are planning a honeymoon in Italy later in the month of October.
+        </p>
+        <p class="text-stone-600 leading-relaxed">
+            We can't wait to celebrate this next chapter of our lives with our closest family and friends.
+        </p>
+    </section>
+
+    <!-- Schedule / Event Details -->
+    <section id="details" class="py-24 bg-stone-100 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-serif text-stone-900 text-center mb-16">The Wedding Day</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Ceremony -->
+                <div class="bg-white p-8 shadow-sm rounded border border-stone-200/60 text-center">
+                    <span class="text-xs tracking-widest uppercase text-stone-400 block mb-2">Part One</span>
+                    <h3 class="text-2xl font-serif text-stone-900 mb-4">The Ceremony</h3>
+                    <ul class="text-stone-600 space-y-2 text-sm md:text-base">
+                        <li><strong class="text-stone-800">Time:</strong> 4:00pm</li>
+                        <li><strong class="text-stone-800">Venue:</strong> Parkwood Estates</li>
+                        <li><strong class="text-stone-800">Address:</strong> 270 Simcoe St N, Oshawa, ON </li>
+                    </ul>
+                </div>
+
+                <!-- Reception -->
+                <div class="bg-white p-8 shadow-sm rounded border border-stone-200/60 text-center">
+                    <span class="text-xs tracking-widest uppercase text-stone-400 block mb-2">Part Two</span>
+                    <h3 class="text-2xl font-serif text-stone-900 mb-4">The Reception</h3>
+                    <ul class="text-stone-600 space-y-2 text-sm md:text-base">
+                        <li><strong class="text-stone-800">Time:</strong> After the ceremony completes</li>
+                        <li><strong class="text-stone-800">Venue:</strong> Bayly Banquet Hall, Ajax Convention Center</li>
+                        <li><strong class="text-stone-800">Address:</strong> 550 Beck Crescent, Ajax, ON</li>
+                        <li class="pt-4 italic text-xs text-stone-500">[Note: Dinner, drinks, and dancing to follow.]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registry Section -->
+    <section id="registry" class="py-24 px-6 max-w-3xl mx-auto text-center border-b border-stone-200">
+        <h2 class="text-3xl font-serif text-stone-900 mb-6">Registry</h2>
+        <p class="text-stone-600 leading-relaxed mb-8">
+            Your presence at our wedding is the greatest gift of all. However, should you wish to honour us with a gift, a contribution towards our future would be sincerely appreciated.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6">
+           <p class="text-stone-600 leading-relaxed mb-8">E transfers can be sent to hannahyvettemaschke@gmail.com</p>
+
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+
+     <!-- ======================= CONTACT FORM ======================= -->
+    <section id="rsvp" class="py-24 px-6 max-w-xl mx-auto">
+        <div class="bg-white p-8 md:p-12 shadow-md rounded border border-stone-200">
+            <h2 class="text-3xl font-serif text-stone-900 text-center mb-2">RSVP</h2>
+            <p class="text-sm text-stone-500 text-center mb-8">Please respond by September 3rd, 2026</p>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form action="https://formsubmit.co/hannahyvettemaschke@gmail.com" method="POST">
+
+                        <!-- Honeypot field to prevent spam. Do not remove. -->
+                        <input type="text" name="_honey" style="display:none">
+
+                        <!-- Disable Captcha. Do not remove. -->
+                        <input type="hidden" name="_captcha" value="true">
+
+                        <!-- Name Input -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+
+                          <div class="mb-3">
+                            <label for="attendance" class="block text-xs uppercase tracking-wider text-stone-600 mb-2 font-medium">Will you be attending?</label>
+                            <select id="attendance" name="attendance" required class="w-full px-4 py-2.5 bg-stone-50 border border-stone-300 focus:outline-none focus:border-stone-600 text-stone-800 text-sm">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="yes">Joyfully Accept</option>
+                                <option value="no">Regretfully Decline</option>
+                            </select>
+                        </div>
+
+                        <!-- Email Input -->
+                        <div class="mb-3">
+                            <label for="email" class="block text-xs uppercase tracking-wider text-stone-600 mb-2 font-medium">Email Address</label>
+                            <input type="email" class="w-full px-4 py-2.5 bg-stone-50 border border-stone-300 focus:outline-none focus:border-stone-600 text-stone-800 text-sm" id="email" name="email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="dietary" class="block text-xs uppercase tracking-wider text-stone-600 mb-2 font-medium">Dietary Restrictions / Allergies</label>
+                            <input type="text" id="dietary" name="dietary" placeholder="e.g., Vegetarian, Peanut Allergy, None" class="w-full px-4 py-2.5 bg-stone-50 border border-stone-300 focus:outline-none focus:border-stone-600 text-stone-800 text-sm">
+                        </div>
+
+                        <!-- Message Textarea -->
+                        <div class="mb-3">
+                            <label for="message" class="block text-xs uppercase tracking-wider text-stone-600 mb-2 font-medium">Leave a message for the couple</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Share a warm note or well wishes..." class="w-full px-4 py-2.5 bg-stone-50 border border-stone-300 focus:outline-none focus:border-stone-600 text-stone-800 text-sm resize-y"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full bg-stone-800 text-stone-100 hover:bg-stone-700 transition duration-300 py-3 tracking-wider text-sm uppercase font-medium mt-4">
+                    Submit Response
+                </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-stone-900 text-stone-400 text-center text-xs tracking-widest uppercase">
+        <p>&copy; 2026 Web design by Hannah Maschke. </p>
+    </footer>
+
+</body>
+</html>
